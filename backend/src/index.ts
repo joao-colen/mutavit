@@ -1,65 +1,13 @@
-interface User {
-    id: number;
-    name: string;
-    email: string;
-}
-
-type Status = 'active' | 'completed' | 'archived' | 'new';
-
-interface Goal {
-    id: number;
-    title: string;
-    description: string;
-    status: Status;
-    createdAt: Date;
-}
-
-interface Habit {
-    id: number;
-    title: string;
-    frequency: 'daily' | 'weekly' | 'monthly';
-    createdAt: Date;
-}
-
-interface Category{
-    id: number;
-    title: string;
-    maxAmount: number;
-}
-
-interface Expense {
-    id: number;
-    title: string;
-    amount: number;
-    category: Category;
-    paymentMethod: 'cash' | 'credit' | 'debit' | 'pix';
-    totalInstallments: number;
-    installmentAmount: number;
-    currentInstallment: number;
-    firstInstallmentDate: Date;
-    bank?: string;
-    date: Date;
-}
-
-interface JournalEntry {
-    id: number;
-    title: string;
-    content: string;
-    createdAt: Date;
-}
-
-interface Project {
-    id: number;
-    title: string;
-    description: string;
-    status: Status;
-    createdAt: Date;
-}
+import {  
+    type User, 
+    type Goal, 
+    type Expense 
+} from './types.ts';
 
 const user: User = {
     id: 1,
     name: 'Joao Colen',
-    email: 'joaovictorcolen@hotmail.com'
+    email: 'joao@email.com'
 }
 
 const goal: Goal = {
@@ -67,7 +15,9 @@ const goal: Goal = {
     title: 'Learn TypeScript',
     description: 'Complete the TypeScript course on Udemy',
     status: 'active',
-    createdAt: new Date()
+    createdAt: new Date(),
+    current: 50,
+    target: 100
 }
 
 const expense: Expense = {
@@ -87,12 +37,3 @@ const expense: Expense = {
     bank: 'Bank of America',
     date: new Date()
 }
-// console.log(user);
-// console.log(goal);
-// console.log(expense);
-
-function calculateTotalInstallments(expense: Expense): number {
-    return expense.totalInstallments * expense.installmentAmount;
-}
-
-console.log(calculateTotalInstallments(expense));

@@ -2,7 +2,7 @@ import {
     type User, 
     type Goal, 
     type Expense 
-} from './types.ts';
+} from './types';
 
 const user: User = {
     id: 1,

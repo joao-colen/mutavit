@@ -4,6 +4,8 @@ import {
     type Expense 
 } from './types';
 
+import {type Task, calculateTaskProgress} from './task';
+
 const user: User = {
     id: 1,
     name: 'Joao Colen',
@@ -37,3 +39,13 @@ const expense: Expense = {
     bank: 'Bank of America',
     date: new Date()
 }
+
+const task: Task = {
+    id: '1',
+    title: 'Complete TypeScript Project',
+    description: 'Finish the TypeScript project for the Udemy course',
+    status: 'completed',
+    createdAt: new Date()
+}
+
+console.log(calculateTaskProgress(task));

@@ -16,6 +16,12 @@ export interface Goal {
     target: number;
 }
 
+export interface CreateGoalDTO {
+    title: string;
+    current: number;
+    target: number;
+}
+
 export interface Habit {
     id: number;
     title: string;

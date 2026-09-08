@@ -6,6 +6,14 @@ export interface User {
 
 export type Status = 'active' | 'completed' | 'archived' | 'new';
 
+export interface Task {
+  id: number;
+  title: string;
+  description: string;
+  status: 'pending' | 'in-progress' | 'completed';
+  createdAt: Date;
+}
+
 export interface Goal {
     id: number;
     title: string;
@@ -20,6 +28,7 @@ export interface CreateGoalDTO {
     title: string;
     current: number;
     target: number;
+    description: string;
 }
 
 export interface UpdateGoalDTO {
@@ -27,6 +36,7 @@ export interface UpdateGoalDTO {
     current?: number;
     target?: number;
     status?: Status;
+    description?: string;
 }
 
 export interface Habit {

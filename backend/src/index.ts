@@ -4,7 +4,7 @@ import {
     type Expense 
 } from './types';
 
-import {type Task, calculateTaskProgress} from './task';
+import {type Task} from './types'
 
 const user: User = {
     id: 1,
@@ -41,11 +41,14 @@ const expense: Expense = {
 }
 
 const task: Task = {
-    id: '1',
+    id: 1,
     title: 'Complete TypeScript Project',
     description: 'Finish the TypeScript project for the Udemy course',
     status: 'completed',
     createdAt: new Date()
 }
 
-console.log(calculateTaskProgress(task));
+function calculateTaskProgress(task: Task): any {
+    throw new Error('Function not implemented.');
+}
+
